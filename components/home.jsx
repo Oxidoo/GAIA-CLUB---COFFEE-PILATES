@@ -3,10 +3,10 @@ function HomePage({ setPage }) {
   const go = (id) => { setPage(id); window.scrollTo(0, 0); };
 
   const cours = [
-    { id: 'reformer', name: 'Reformer', sub: 'Pilates', img: 'assets/home/cours-reformer.jpg' },
-    { id: 'mat', name: 'Mat', sub: 'Pilates', img: 'assets/home/cours-mat.jpg' },
-    { id: 'hot', name: 'Hot', sub: 'Pilates', img: 'assets/home/cours-hot.jpg' },
-    { id: 'yoga', name: 'Yoga', sub: '', img: 'assets/home/cours-yoga.jpg' },
+    { id: 'reformer', name: 'Reformer', img: 'assets/home/cours-reformer.jpg' },
+    { id: 'mat', name: 'Mat', img: 'assets/home/cours-mat.jpg' },
+    { id: 'hot', name: 'Hot', img: 'assets/home/cours-hot.jpg' },
+    { id: 'yoga', name: 'Yoga', img: 'assets/home/cours-yoga.jpg' },
   ];
 
   const passes = [
@@ -80,7 +80,7 @@ function HomePage({ setPage }) {
               <a key={c.id} href="#" className="cours-card" style={{ borderRadius: '10px' }} onClick={(e) => { e.preventDefault(); go('cours'); }}>
                 <img src={c.img} alt={c.name} />
                 <div className="cours-card-label">
-                  <h3>{c.name}{c.sub && <><br/><span className="script">{c.sub}</span></>}</h3>
+                  <h3>{c.name}</h3>
                   <div className="cours-card-arrow">→</div>
                 </div>
               </a>
