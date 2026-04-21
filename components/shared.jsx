@@ -1,9 +1,10 @@
 // Shared UI: Nav, Footer, Mobile Menu
-const NAV_LINKS = [
+const NAV_LINKS_LEFT = [
   { id: 'club', label: 'Le Club' },
   { id: 'cours', label: 'Cours' },
+  { id: 'tarifs', label: 'Planning' },
   { id: 'tarifs', label: 'Tarifs' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'shop', label: 'Shop' },
 ];
 
 function Nav({ page, setPage, variant = 'solid' }) {
@@ -21,28 +22,58 @@ function Nav({ page, setPage, variant = 'solid' }) {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
   }, [mobileOpen]);
 
-  const go = (id) => { setPage(id); setMobileOpen(false); window.scrollTo(0, 0); };
+  const go = (id) => {
+    if (id === 'shop') { alert('Shop bientôt disponible.'); return; }
+    setPage(id); setMobileOpen(false); window.scrollTo(0, 0);
+  };
 
   return (
     <>
       <header className={`nav ${variant === 'light' ? 'light' : ''} ${scrolled ? 'scrolled' : ''} ${variant === 'solid' ? 'solid' : ''}`}>
-        <a className="nav-logo" href="#" onClick={(e) => { e.preventDefault(); go('home'); }} aria-label="GAIA — Accueil">
-          <img src="assets/logo-jaune.png" alt="GAIA" className="nav-logo-img" />
-        </a>
+        {/* Left: navigation links */}
         <nav className="nav-links">
-          {NAV_LINKS.map(l => (
-            <a key={l.id} href="#" className={page === l.id ? 'active' : ''}
+          {NAV_LINKS_LEFT.map((l, i) => (
+            <a key={i} href="#" className={page === l.id ? 'active' : ''}
                onClick={(e) => { e.preventDefault(); go(l.id); }}>
               {l.label}
             </a>
           ))}
         </nav>
-        <a href="#" className="nav-cta" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>
-          Réserver
+
+        {/* Center: logo */}
+        <a className="nav-logo" href="#" onClick={(e) => { e.preventDefault(); go('home'); }} aria-label="GAIA — Accueil">
+          <img src="assets/logo-jaune.png" alt="GAIA" className="nav-logo-img" />
         </a>
-        <button className={`nav-burger ${mobileOpen ? 'open' : ''}`} onClick={() => setMobileOpen(v => !v)} aria-label="Menu">
-          <span /><span /><span />
-        </button>
+
+        {/* Right: icons + CTA */}
+        <div className="nav-right">
+          <a href="#" className="nav-icon" onClick={(e) => e.preventDefault()} aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="#" className="nav-icon" onClick={(e) => e.preventDefault()} aria-label="Mon compte">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </a>
+          <a href="#" className="nav-icon" onClick={(e) => e.preventDefault()} aria-label="Panier">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 01-8 0"/>
+            </svg>
+          </a>
+          <a href="#" className="nav-cta" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>
+            Réserver
+          </a>
+          <button className={`nav-burger ${mobileOpen ? 'open' : ''}`} onClick={() => setMobileOpen(v => !v)} aria-label="Menu">
+            <span /><span /><span />
+          </button>
+        </div>
       </header>
 
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
@@ -50,6 +81,7 @@ function Nav({ page, setPage, variant = 'solid' }) {
           <a href="#" onClick={(e) => { e.preventDefault(); go('home'); }}>Accueil</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('club'); }}>Le Club</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('cours'); }}>Cours</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>Planning</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>Tarifs</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('contact'); }}>Contact</a>
           <a href="#" className="script-tag" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>Réserver</a>
@@ -170,4 +202,4 @@ function Outro({ setPage }) {
   );
 }
 
-Object.assign(window, { Nav, Footer, Marquee, Outro, NAV_LINKS });
+Object.assign(window, { Nav, Footer, Marquee, Outro, NAV_LINKS_LEFT });

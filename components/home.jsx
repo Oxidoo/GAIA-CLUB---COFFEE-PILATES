@@ -21,19 +21,15 @@ function HomePage({ setPage }) {
         <div className="hero-bg" />
         <div className="hero-inner">
           <h1 className="hero-title">
-            <span className="the">The</span>
-            <span className="art">Art</span>
-            <br/>
-            <span className="of">OF BALANCE</span>
+            <span className="hero-title-script">
+              <span className="hero-the">The </span><span className="hero-art">Art</span>
+            </span>
+            <span className="hero-title-bold">OF BALANCE</span>
           </h1>
-          <div className="hero-meta">
-            <span className="script">Vivre ma séance</span>
-            <div className="hero-hours">
-              <div><strong>7h</strong>Ouverture</div>
-              <div><strong>21h</strong>Fermeture</div>
-              <div><strong>7/7</strong>Ouvert</div>
-            </div>
-          </div>
+          <p className="hero-subtitle">Pilates &amp; Coffee Shop</p>
+          <button className="btn-hero-cta" onClick={() => go('tarifs')}>
+            Vivre ma séance
+          </button>
         </div>
       </section>
 
