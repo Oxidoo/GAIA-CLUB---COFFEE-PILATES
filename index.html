@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAIA — The Art of Balance</title>
+  <meta name="description" content="GAIA Club — Pilates, Yoga & Coffee Shop au cœur du 12e arrondissement de Paris." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/logo-marron.png" />
+
+  <!-- Dynamic CSS variables from Tweaks -->
+  <style id="tweak-vars">
+    :root {
+      --tw-body-size: 16px;
+      --tw-btn-radius: 999px;
+      --tw-card-radius: 0px;
+      --tw-section-pad: 120px;
+      --tw-container: min(1440px, 100vw - 48px);
+      --tw-transition: 0.3s;
+      --tw-hero-overlay: 0.55;
+      --tw-hover-zoom: 1.05;
+      --tw-hero-font: 72px;
+      --tw-nav-letter: 0.18em;
+      --tw-shadow: none;
+    }
+
+    /* Apply tweakable values */
+    body { font-size: var(--tw-body-size); }
+
+    .btn { border-radius: var(--tw-btn-radius); transition: all var(--tw-transition) var(--ease); }
+    .nav-cta { border-radius: var(--tw-btn-radius); transition: all var(--tw-transition) var(--ease); }
+    .cours-card, .shop-card { border-radius: var(--tw-card-radius); box-shadow: var(--tw-shadow); }
+    .pass-card, .offre-card, .abo-card, .conseil { border-radius: var(--tw-card-radius); box-shadow: var(--tw-shadow); }
+
+    .section { padding: var(--tw-section-pad) 0; }
+    .container { width: var(--tw-container); max-width: var(--tw-container); }
+
+    .cours-card img, .shop-card img { transition: transform var(--tw-transition) var(--ease), filter var(--tw-transition) var(--ease); }
+    .cours-card:hover img, .shop-card:hover img { transform: scale(var(--tw-hover-zoom)); }
+    .banner-img img, .galerie-strip > img { transition: transform var(--tw-transition) var(--ease); }
+
+    .nav-links a, .nav-links a::after, .nav-cta { transition: all var(--tw-transition) var(--ease); }
+    .nav-links { letter-spacing: var(--tw-nav-letter); }
+
+    /* Hero overlay uses custom property */
+    .hero-bg::after { background: linear-gradient(180deg, rgba(48,18,10, calc(var(--tw-hero-overlay) * 0.9)) 0%, rgba(48,18,10, calc(var(--tw-hero-overlay) * 0.18)) 30%, rgba(48,18,10, calc(var(--tw-hero-overlay) * 1.4)) 100%); }
+    .hero { min-height: calc(var(--tw-hero-minheight, 100) * 1vh); }
+
+    /* Hero font size */
+    .hero-title { font-size: clamp(var(--tw-hero-font), 14vw, calc(var(--tw-hero-font) * 3.3)); }
+
+    /* Feature flags */
+    body[data-hide-marquee="1"] .marquee { display: none; }
+    body[data-hide-galerie="1"] .galerie { display: none; }
+    body[data-hide-shop="1"] .shop-mosaic { display: none; }
+    body[data-hide-stats="1"] .intro-stats { display: none; }
+    body[data-hide-fondateurs="1"] .fondateurs { display: none; }
+
+    /* Cours grid columns */
+    body[data-cours-cols="1"] .cours-grid { grid-template-columns: 1fr; }
+    body[data-cours-cols="2"] .cours-grid { grid-template-columns: repeat(2, 1fr); }
+    body[data-cours-cols="3"] .cours-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* Nav compact */
+    body[data-nav-compact="1"] .nav { padding: 10px 40px; }
+
+    /* Tweaks panel right padding so site content doesn't hide behind panel */
+    body.tweaks-open { padding-right: 300px; }
+    @media (max-width: 640px) { body.tweaks-open { padding-right: 0; } }
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="tweaks-root"></div>
+
+  <script type="text/babel" src="components/shared.jsx"></script>
+  <script type="text/babel" src="components/home.jsx"></script>
+  <script type="text/babel" src="components/club.jsx"></script>
+  <script type="text/babel" src="components/cours.jsx"></script>
+  <script type="text/babel" src="components/tarifs.jsx"></script>
+  <script type="text/babel" src="components/contact.jsx"></script>
+  <script type="text/babel" src="components/tweaks.jsx"></script>
+
+  <script type="text/babel">
+    // ============ TWEAK DEFAULTS ============
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "colorMarron": "#30120A",
+      "colorMarronSoft": "#4a2a1e",
+      "colorJaune": "#FFEC99",
+      "colorBeige": "#F7F4EF",
+      "colorBlanc": "#FBFAF5",
+      "colorLine": "rgba(48,18,10,0.18)",
+      "fontBody": "Manrope",
+      "fontScript": "Zapfino",
+      "bodyFontSize": 16,
+      "heroFontSize": 72,
+      "navLetterSpacing": 0.18,
+      "btnRadius": 999,
+      "cardRadius": 10,
+      "cardShadow": false,
+      "sectionPadding": 120,
+      "containerMaxWidth": 1440,
+      "heroOverlay": 0.55,
+      "heroShowHours": false,
+      "heroMinHeight": 100,
+      "transitionSpeed": 0.3,
+      "hoverZoom": 1.05,
+      "showMarquee": true,
+      "showGalerie": true,
+      "showShop": true,
+      "showStats": true,
+      "showFondateurs": true,
+      "coursColumns": 4,
+      "footerDark": true,
+      "navCompact": false,
+      "navStyle": "transparent",
+      "marqueeRunning": true
+    }/*EDITMODE-END*/;
+
+    window.__TWEAK_DEFAULTS__ = TWEAK_DEFAULTS;
+
+    // ============ Tweaks host ============
+    function TweaksHost() {
+      const [visible, setVisible] = React.useState(false);
+
+      React.useEffect(() => {
+        // Register listener FIRST, then announce availability
+        const handler = (e) => {
+          if (!e.data || !e.data.type) return;
+          if (e.data.type === '__activate_edit_mode') {
+            setVisible(true);
+            document.body.classList.add('tweaks-open');
+          }
+          if (e.data.type === '__deactivate_edit_mode') {
+            setVisible(false);
+            document.body.classList.remove('tweaks-open');
+          }
+        };
+        window.addEventListener('message', handler);
+        window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+        return () => window.removeEventListener('message', handler);
+      }, []);
+
+      if (!visible) return null;
+      return (
+        <TweaksPanel
+          defaults={TWEAK_DEFAULTS}
+          onClose={() => {
+            setVisible(false);
+            document.body.classList.remove('tweaks-open');
+            window.parent.postMessage({ type: '__deactivate_edit_mode' }, '*');
+          }}
+        />
+      );
+    }
+
+    // ============ Main App ============
+    function App() {
+      const initial = (() => {
+        try {
+          const saved = localStorage.getItem('gaia-page');
+          if (saved && ['home','club','cours','tarifs','contact'].includes(saved)) return saved;
+        } catch (e) {}
+        return 'home';
+      })();
+      const [page, setPageState] = React.useState(initial);
+      const setPage = (p) => {
+        setPageState(p);
+        try { localStorage.setItem('gaia-page', p); } catch (e) {}
+      };
+
+      // Apply feature-flag data attrs from tweaks to body
+      React.useEffect(() => {
+        const handler = (e) => {
+          if (!e.data || e.data.type !== '__edit_mode_set_keys') return;
+          const v = e.data.edits;
+          if (!v) return;
+          const b = document.body;
+          b.dataset.hideMarquee = v.showMarquee === false ? '1' : '';
+          b.dataset.hideGalerie = v.showGalerie === false ? '1' : '';
+          b.dataset.hideShop = v.showShop === false ? '1' : '';
+          b.dataset.hideStats = v.showStats === false ? '1' : '';
+          b.dataset.hideFondateurs = v.showFondateurs === false ? '1' : '';
+          b.dataset.coursCols = v.coursColumns || 4;
+          b.dataset.navCompact = v.navCompact ? '1' : '';
+          // hero min-height
+          document.documentElement.style.setProperty('--tw-hero-minheight', v.heroMinHeight || 100);
+        };
+        window.addEventListener('message', handler);
+        return () => window.removeEventListener('message', handler);
+      }, []);
+
+      const navVariant = (page === 'home' || page === 'club' || page === 'tarifs') ? 'light' : 'solid';
+
+      let PageEl = null;
+      if (page === 'home') PageEl = <HomePage setPage={setPage} />;
+      else if (page === 'club') PageEl = <ClubPage setPage={setPage} />;
+      else if (page === 'cours') PageEl = <CoursPage setPage={setPage} />;
+      else if (page === 'tarifs') PageEl = <TarifsPage setPage={setPage} />;
+      else if (page === 'contact') PageEl = <ContactPage setPage={setPage} />;
+
+      return (
+        <>
+          <Nav page={page} setPage={setPage} variant={navVariant} />
+          <main key={page}>{PageEl}</main>
+          <Footer setPage={setPage} />
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksHost />);
+  </script>
+</body>
+</html>
