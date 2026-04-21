@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAIA — The Art of Balance</title>
+  <meta name="description" content="GAIA Club — Pilates, Yoga & Coffee Shop au cœur du 12e arrondissement de Paris." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/logo-marron.png" />
+
+  <!-- Resource dependencies for bundler -->
+  <meta name="ext-resource-dependency" content="assets/home/cours-reformer.jpg" data-resource-id="coursReformer" />
+  <meta name="ext-resource-dependency" content="assets/home/cours-mat.jpg" data-resource-id="coursMat" />
+  <meta name="ext-resource-dependency" content="assets/home/cours-hot.jpg" data-resource-id="coursHot" />
+  <meta name="ext-resource-dependency" content="assets/home/cours-yoga.jpg" data-resource-id="coursYoga" />
+  <meta name="ext-resource-dependency" content="assets/home/coffee-shop.jpg" data-resource-id="coffeeShop" />
+  <meta name="ext-resource-dependency" content="assets/home/shop-1.jpg" data-resource-id="shop1" />
+  <meta name="ext-resource-dependency" content="assets/home/shop-2.jpg" data-resource-id="shop2" />
+  <meta name="ext-resource-dependency" content="assets/home/shop-3.jpg" data-resource-id="shop3" />
+  <meta name="ext-resource-dependency" content="assets/home/class-passes.jpg" data-resource-id="classPasses" />
+  <meta name="ext-resource-dependency" content="assets/home/galerie-1.jpg" data-resource-id="galerie1" />
+  <meta name="ext-resource-dependency" content="assets/home/galerie-2.jpg" data-resource-id="galerie2" />
+  <meta name="ext-resource-dependency" content="assets/home/galerie-3.jpg" data-resource-id="galerie3" />
+  <meta name="ext-resource-dependency" content="assets/home/galerie-4.jpg" data-resource-id="galerie4" />
+  <meta name="ext-resource-dependency" content="assets/home/galerie-5.jpg" data-resource-id="galerie5" />
+  <meta name="ext-resource-dependency" content="assets/logo-jaune.png" data-resource-id="logoJaune" />
+  <meta name="ext-resource-dependency" content="assets/logo-footer-marron.svg" data-resource-id="logoFooter" />
+  <meta name="ext-resource-dependency" content="assets/insta.png" data-resource-id="insta" />
+  <meta name="ext-resource-dependency" content="assets/tiktok.png" data-resource-id="tiktok" />
+  <meta name="ext-resource-dependency" content="assets/club/lieu-mouvement.jpg" data-resource-id="clubMouvement" />
+  <meta name="ext-resource-dependency" content="assets/club/fondateurs-1.jpg" data-resource-id="fondateurs1" />
+  <meta name="ext-resource-dependency" content="assets/club/fondateurs-2.jpg" data-resource-id="fondateurs2" />
+  <meta name="ext-resource-dependency" content="assets/cours/cours-1.jpg" data-resource-id="coursDetail1" />
+  <meta name="ext-resource-dependency" content="assets/cours/cours-2.jpg" data-resource-id="coursDetail2" />
+  <meta name="ext-resource-dependency" content="assets/cours/cours-3.jpg" data-resource-id="coursDetail3" />
+  <meta name="ext-resource-dependency" content="assets/cours/cours-4.jpg" data-resource-id="coursDetail4" />
+
+  <!-- Bundler thumbnail -->
+  <template id="__bundler_thumbnail" data-bg-color="#30120A">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#30120A"/>
+      <text x="600" y="360" font-family="sans-serif" font-size="120" fill="#FFEC99" text-anchor="middle" font-weight="300">GAIA</text>
+      <text x="600" y="460" font-family="serif" font-size="40" fill="#F7F4EF" text-anchor="middle" font-style="italic" opacity="0.8">The Art of Balance</text>
+    </svg>
+  </template>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="tweaks-root"></div>
+
+  <script type="text/babel" src="components/shared.jsx"></script>
+  <script type="text/babel" src="components/home.jsx"></script>
+  <script type="text/babel" src="components/club.jsx"></script>
+  <script type="text/babel" src="components/cours.jsx"></script>
+  <script type="text/babel" src="components/tarifs.jsx"></script>
+  <script type="text/babel" src="components/contact.jsx"></script>
+  <script type="text/babel" src="components/tweaks.jsx"></script>
+
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "colorMarron": "#30120A",
+      "colorMarronSoft": "#4a2a1e",
+      "colorJaune": "#FFEC99",
+      "colorBeige": "#F7F4EF",
+      "colorBlanc": "#FBFAF5",
+      "colorLine": "rgba(48,18,10,0.18)",
+      "fontBody": "Manrope",
+      "fontScript": "Zapfino",
+      "bodyFontSize": 16,
+      "heroFontSize": 72,
+      "navLetterSpacing": 0.18,
+      "btnRadius": 999,
+      "cardRadius": 10,
+      "cardShadow": false,
+      "sectionPadding": 120,
+      "containerMaxWidth": 1440,
+      "heroOverlay": 0.55,
+      "heroShowHours": false,
+      "heroMinHeight": 100,
+      "transitionSpeed": 0.3,
+      "hoverZoom": 1.05,
+      "showMarquee": true,
+      "showGalerie": true,
+      "showShop": true,
+      "showStats": true,
+      "showFondateurs": true,
+      "coursColumns": 4,
+      "footerDark": true,
+      "navCompact": false,
+      "navStyle": "transparent",
+      "marqueeRunning": true
+    }/*EDITMODE-END*/;
+
+    window.__TWEAK_DEFAULTS__ = TWEAK_DEFAULTS;
+
+    function TweaksHost() {
+      const [visible, setVisible] = React.useState(false);
+
+      React.useEffect(() => {
+        const handler = (e) => {
+          if (!e.data || !e.data.type) return;
+          if (e.data.type === '__activate_edit_mode') {
+            setVisible(true);
+            document.body.classList.add('tweaks-open');
+          }
+          if (e.data.type === '__deactivate_edit_mode') {
+            setVisible(false);
+            document.body.classList.remove('tweaks-open');
+          }
+        };
+        window.addEventListener('message', handler);
+        window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+        return () => window.removeEventListener('message', handler);
+      }, []);
+
+      if (!visible) return null;
+      return <TweaksPanel defaults={TWEAK_DEFAULTS} onClose={() => { setVisible(false); document.body.classList.remove('tweaks-open'); window.parent.postMessage({ type: '__deactivate_edit_mode' }, '*'); }} />;
+    }
+
+    function App() {
+      const initial = (() => {
+        try {
+          const saved = localStorage.getItem('gaia-page');
+          if (saved && ['home','club','cours','tarifs','contact'].includes(saved)) return saved;
+        } catch (e) {}
+        return 'home';
+      })();
+      const [page, setPageState] = React.useState(initial);
+      const setPage = (p) => {
+        setPageState(p);
+        try { localStorage.setItem('gaia-page', p); } catch (e) {}
+      };
+
+      React.useEffect(() => {
+        const handler = (e) => {
+          if (!e.data || e.data.type !== '__edit_mode_set_keys') return;
+          const v = e.data.edits;
+          if (!v) return;
+          const b = document.body;
+          b.dataset.hideMarquee = v.showMarquee === false ? '1' : '';
+          b.dataset.hideGalerie = v.showGalerie === false ? '1' : '';
+          b.dataset.hideShop = v.showShop === false ? '1' : '';
+          b.dataset.hideStats = v.showStats === false ? '1' : '';
+          b.dataset.hideFondateurs = v.showFondateurs === false ? '1' : '';
+          b.dataset.coursCols = v.coursColumns || 4;
+          b.dataset.navCompact = v.navCompact ? '1' : '';
+          document.documentElement.style.setProperty('--tw-hero-minheight', v.heroMinHeight || 100);
+        };
+        window.addEventListener('message', handler);
+        return () => window.removeEventListener('message', handler);
+      }, []);
+
+      const navVariant = (page === 'home' || page === 'club' || page === 'tarifs') ? 'light' : 'solid';
+
+      let PageEl = null;
+      if (page === 'home') PageEl = <HomePage setPage={setPage} />;
+      else if (page === 'club') PageEl = <ClubPage setPage={setPage} />;
+      else if (page === 'cours') PageEl = <CoursPage setPage={setPage} />;
+      else if (page === 'tarifs') PageEl = <TarifsPage setPage={setPage} />;
+      else if (page === 'contact') PageEl = <ContactPage setPage={setPage} />;
+
+      return (
+        <>
+          <Nav page={page} setPage={setPage} variant={navVariant} />
+          <main key={page}>{PageEl}</main>
+          <Footer setPage={setPage} />
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksHost />);
+  </script>
+</body>
+</html>

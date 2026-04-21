@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAIA — The Art of Balance</title>
+  <meta name="description" content="GAIA Club — Pilates, Yoga & Coffee Shop au cœur du 12e arrondissement de Paris." />
+  <link rel="icon" type="image/png" href="assets/logo-marron.png" />
+
+  <style>
+    @font-face {
+      font-family: 'Manrope';
+      font-weight: 400;
+      src: url('assets/fonts/Manrope-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Manrope';
+      font-weight: 500;
+      src: url('assets/fonts/Manrope-Medium.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Manrope';
+      font-weight: 600;
+      src: url('assets/fonts/Manrope-SemiBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Manrope';
+      font-weight: 700;
+      src: url('assets/fonts/Manrope-Bold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Zapfino';
+      src: url('assets/fonts/Zapfino.ttf') format('truetype');
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #FBFAF5;
+      color: #30120A;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .script { font-family: 'Zapfino', cursive; font-weight: 400; }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    h1, h2, h3 { font-weight: 400; line-height: 1.1; }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: 0.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: #30120A;
+      color: #FFEC99;
+    }
+
+    @media print {
+      @page { size: A4; margin: 1cm; }
+      
+      body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      section { page-break-after: always; page-break-inside: avoid; padding: 40px; min-height: auto; }
+      section:last-child { page-break-after: avoid; }
+
+      h1 { font-size: 48px; margin-bottom: 24px; }
+      h2 { font-size: 36px; margin-bottom: 20px; }
+      p { margin-bottom: 12px; line-height: 1.6; }
+
+      .hero {
+        background: linear-gradient(135deg, #30120A 0%, #4a2a1e 100%);
+        color: #FFEC99;
+        padding: 60px 40px;
+        min-height: 400px;
+        display: flex;
+        align-items: flex-end;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .intro { background: white; padding: 60px 40px; }
+      .intro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+      .intro-stat strong { font-size: 28px; display: block; margin-bottom: 8px; }
+
+      .section-dark { background: #30120A; color: #F7F4EF; -webkit-print-color-adjust: exact; }
+      .section-beige { background: #F7F4EF; -webkit-print-color-adjust: exact; }
+      .section-yellow { background: #FFEC99; color: #30120A; -webkit-print-color-adjust: exact; }
+
+      .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+      .grid-2 img { max-height: 400px; object-fit: cover; page-break-inside: avoid; }
+
+      .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .grid-3 > * { page-break-inside: avoid; }
+
+      .card {
+        padding: 32px;
+        background: white;
+        border: 1px solid rgba(48,18,10,0.15);
+        page-break-inside: avoid;
+      }
+
+      .card.dark { background: #30120A; color: #F7F4EF; -webkit-print-color-adjust: exact; }
+
+      a { color: #30120A; text-decoration: none; }
+      .section-dark a { color: #FFEC99; }
+
+      table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+      td, th { padding: 12px; border-bottom: 1px solid rgba(48,18,10,0.15); text-align: left; }
+      th { font-weight: 600; background: #F7F4EF; -webkit-print-color-adjust: exact; }
+
+      img { page-break-inside: avoid; }
+      h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+
+      * { transition: none !important; animation: none !important; }
+    }
+
+    @media screen {
+      section { padding: 60px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1 style="font-size: 72px; line-height: 0.9; color: #FFEC99;">
+      <span class="script" style="font-size: 0.4em;">The</span><br/>
+      <span class="script" style="font-size: 0.7em;">Art</span><br/>
+      <span style="font-weight: 300; font-size: 0.85em;">OF BALANCE</span>
+    </h1>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="eyebrow">L'esprit Gaia</div>
+  <h2>Un lieu où <span class="script">mouvement</span> et <span class="script">pause</span> coexistent</h2>
+  <p style="max-width: 700px; margin: 24px 0 40px; font-size: 15px; line-height: 1.75;">
+    Au cœur du 12<sup>e</sup> arrondissement, GAIA est né d'une envie simple : créer un espace où le corps bouge et où l'esprit ralentit. Entre pilates, yoga et instants suspendus, chaque détail invite à une pause dans le rythme du quotidien.
+  </p>
+  <div class="intro-stats">
+    <div class="intro-stat">
+      <strong>200 m²</strong>
+      <span>Dédiés à la performance & à l'expérience Gaia</span>
+    </div>
+    <div class="intro-stat">
+      <strong>2 Studios</strong>
+      <span>Sur machine ou sur tapis</span>
+    </div>
+    <div class="intro-stat">
+      <strong>Coffee Shop</strong>
+      <span>Du matin à la dernière pause</span>
+    </div>
+    <div class="intro-stat">
+      <strong>Vestiaires</strong>
+      <span>Premium, spacieux & tout équipés</span>
+    </div>
+  </div>
+</section>
+
+<!-- NOS COURS -->
+<section class="section-beige">
+  <div class="eyebrow">Nos cours</div>
+  <h2 style="margin-bottom: 40px;">Trouvez votre <span class="script">pratique</span></h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px;">
+    <div class="card">
+      <h3 style="margin-bottom: 16px;">Reformer <span class="script">Pilates</span></h3>
+      <p><strong>Un entraînement précis, une transformation en profondeur.</strong></p>
+      <p style="font-size: 14px; margin-top: 12px;">Résistance contrôlée, mouvements fluides et travail ciblé. Une pratique exigeante, maîtrisée et intensément efficace.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom: 16px;">Mat <span class="script">Pilates</span></h3>
+      <p><strong>La maîtrise du mouvement, en toute simplicité.</strong></p>
+      <p style="font-size: 14px; margin-top: 12px;">Au sol, chaque geste demande précision et contrôle. Renforce en profondeur et améliore la posture.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom: 16px;">Hot <span class="script">Pilates</span></h3>
+      <p><strong>L'intensité maîtrisée, la chaleur comme catalyseur.</strong></p>
+      <p style="font-size: 14px; margin-top: 12px;">À 35°C, le corps se réchauffe et les muscles travaillent en profondeur. Dynamique et exigeante.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom: 16px;">Yoga</h3>
+      <p><strong>Fluidité, respiration et équilibre.</strong></p>
+      <p style="font-size: 14px; margin-top: 12px;">Une pratique qui relie le mouvement au souffle. Développe souplesse et mobilité.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLASS PASSES -->
+<section class="section-dark">
+  <div class="eyebrow" style="color: #FFEC99;">Class Passes</div>
+  <h2 style="color: #FFEC99; margin-bottom: 40px;">Trouvez votre <span class="script">rituel</span></h2>
+  
+  <div class="grid-3">
+    <div class="card dark" style="text-align: center;">
+      <div style="font-size: 56px; color: #FFEC99; font-weight: 500; line-height: 1; margin-bottom: 16px;">1</div>
+      <h3 style="color: #FFEC99; margin-bottom: 16px; font-size: 24px;">Discover<br/>the experience</h3>
+      <div style="font-size: 48px; color: #FFEC99; font-weight: 500; margin: 16px 0;">28€</div>
+      <p style="font-size: 13px; margin: 16px 0;">Idéal pour explorer le studio et vivre une parenthèse de mouvement.</p>
+      <button class="btn btn-primary" style="width: 100%; margin-top: 16px;">Réserver</button>
+    </div>
+    <div class="card dark" style="text-align: center; background: rgba(255,236,153,0.1);">
+      <div style="font-size: 56px; color: #FFEC99; font-weight: 500; line-height: 1; margin-bottom: 16px;">5</div>
+      <h3 style="color: #FFEC99; margin-bottom: 16px; font-size: 24px;">Build your<br/>ritual</h3>
+      <div style="font-size: 48px; color: #FFEC99; font-weight: 500; margin: 16px 0;">130€</div>
+      <p style="font-size: 13px; margin: 16px 0;">Pour installer une régularité et intégrer le mouvement dans votre semaine.</p>
+      <button class="btn btn-primary" style="width: 100%; margin-top: 16px;">M'abonner</button>
+    </div>
+    <div class="card dark" style="text-align: center;">
+      <div style="font-size: 56px; color: #FFEC99; font-weight: 500; line-height: 1; margin-bottom: 16px;">∞</div>
+      <h3 style="color: #FFEC99; margin-bottom: 16px; font-size: 24px;">Live the<br/>practice</h3>
+      <div style="font-size: 48px; color: #FFEC99; font-weight: 500; margin: 16px 0;">220€<span style="font-size: 18px; color: rgba(255,236,153,0.7);">/mois</span></div>
+      <p style="font-size: 13px; margin: 16px 0;">Accès libre à tous les cours pour faire du mouvement un véritable art de vivre.</p>
+      <button class="btn btn-primary" style="width: 100%; margin-top: 16px;">M'abonner</button>
+    </div>
+  </div>
+</section>
+
+<!-- LE CLUB -->
+<section class="intro">
+  <div class="eyebrow">Le club</div>
+  <h2 style="margin-bottom: 32px;">Un lieu pensé<br/>pour le <span class="script">mouvement</span></h2>
+  <p style="max-width: 700px; margin-bottom: 20px; line-height: 1.75;">
+    Le studio propose deux salles complémentaires : une salle Reformer équipée de machines haut de gamme, et une salle plus intimiste accueillant jusqu'à 10 personnes, dédiée aux cours sur tapis, au yoga et au Hot Pilates.
+  </p>
+  <p style="max-width: 700px; margin-bottom: 20px; line-height: 1.75;">
+    Pour certaines pratiques, la salle est chauffée jusqu'à 35°C, favorisant un travail musculaire intense. Des vestiaires premium ont été pensés pour le confort de chacun, dans un lieu ouvert aux femmes comme aux hommes.
+  </p>
+  <p style="max-width: 700px; line-height: 1.75;">
+    GAIA a été pensé comme un véritable lieu de vie, où l'on peut prendre le temps avant ou après sa séance. Le studio dispose d'un coffee shop, proposant cafés, boissons et options saines.
+  </p>
+</section>
+
+<!-- CONTACT & INFOS -->
+<section class="section-dark">
+  <h2 style="color: #FFEC99; margin-bottom: 40px;">Nous <span class="script">rencontrer</span></h2>
+  
+  <div class="grid-2">
+    <div>
+      <h3 style="color: #FFEC99; margin-bottom: 24px;">GAIA Club</h3>
+      <p style="margin-bottom: 20px;"><strong>Adresse</strong><br/>79 Avenue Ledru Rollin<br/>75012 — Paris</p>
+      <p style="margin-bottom: 20px;"><strong>Horaires</strong><br/>Du lundi au dimanche<br/>7h15 — 21h30</p>
+      <p style="margin-bottom: 20px;"><strong>Contact</strong><br/>contact@gaia-club.com<br/>01 80 88 05 60</p>
+      <p><strong>Réseaux</strong><br/>@gaiaclub.paris</p>
+    </div>
+    <div>
+      <p style="margin-bottom: 20px;"><strong>Transports</strong></p>
+      <p style="margin-bottom: 20px;">
+        🚇 Métro · Ledru Rollin<br/>
+        🚌 Bus · Ligne 61 — N16 — N34<br/>
+        🚴 Vélib' · Station à 100 m<br/>
+        🅿️ Parking · Q-Park Bastille Saint-Antoine
+      </p>
+      <p style="font-size: 13px; line-height: 1.7; opacity: 0.8;">
+        Un lieu où mouvement et pause coexistent, au cœur du 12<sup>e</sup> arrondissement de Paris.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="section-yellow">
+  <h2 style="text-align: center; font-size: 56px; margin-bottom: 24px;">À bientôt<br/>chez <span class="script">Gaia</span></h2>
+  <p style="text-align: center; font-size: 16px; max-width: 500px; margin: 0 auto;">
+    Votre espace pour bouger, respirer et ralentir.
+  </p>
+  <div style="text-align: center; margin-top: 40px;">
+    <button class="btn btn-primary">M'inscrire</button>
+  </div>
+  <p style="text-align: center; margin-top: 60px; font-size: 12px; opacity: 0.6;">
+    © 2026 GAIA Club · Tous droits réservés
+  </p>
+</section>
+
+</body>
+</html>
