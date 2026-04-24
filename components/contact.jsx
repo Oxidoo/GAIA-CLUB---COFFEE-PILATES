@@ -17,6 +17,8 @@ function ContactPage({ setPage }) {
         </div>
       </section>
 
+      <Marquee />
+
       <section className="contact-duo">
         <div className="contact-duo-card">
           <img src="contact/contact-2.jpg" alt="Le Club" />
@@ -53,8 +55,6 @@ function ContactPage({ setPage }) {
       <section className="contact-photo-block">
         <img src="contact/contact-4.jpg" alt="GAIA Studio" />
       </section>
-
-      <Marquee />
 
       <Outro setPage={setPage} />
     </div>
