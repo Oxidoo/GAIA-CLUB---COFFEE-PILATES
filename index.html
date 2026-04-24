@@ -186,17 +186,9 @@
 
     // ============ Main App ============
     function App() {
-      const initial = (() => {
-        try {
-          const saved = localStorage.getItem('gaia-page');
-          if (saved && ['home','club','cours','tarifs','contact'].includes(saved)) return saved;
-        } catch (e) {}
-        return 'home';
-      })();
-      const [page, setPageState] = React.useState(initial);
+      const [page, setPageState] = React.useState('home');
       const setPage = (p) => {
         setPageState(p);
-        try { localStorage.setItem('gaia-page', p); } catch (e) {}
       };
 
       // Scroll to top after every page change, once the new content is rendered
