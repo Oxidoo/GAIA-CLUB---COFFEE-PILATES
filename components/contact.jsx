@@ -4,8 +4,8 @@ function ContactPage({ setPage }) {
     <div className="page-root">
       <section className="contact-hero" data-screen-label="Contact Hero">
         <div className="contact-hero-bg" />
-        <div className="eyebrow" style={{ marginBottom: 24, opacity: 0.8 }}>Nous rencontrer</div>
         <h1><span className="script">Contact</span></h1>
+        <div className="eyebrow" style={{ marginTop: 20, opacity: 0.8 }}>Nous rencontrer</div>
         <p>
           Venez bouger, respirer et prendre le temps chez GAIA. Retrouvez ici toutes
           les informations pour organiser votre visite.
