@@ -28,15 +28,6 @@
       display: block;
     }
   </style>
-  <script>
-    // Suppress loader immediately if already visited
-    if (localStorage.getItem('gaia-loader-seen')) {
-      document.addEventListener('DOMContentLoaded', function () {
-        var el = document.getElementById('gaia-loader');
-        if (el) el.remove();
-      });
-    }
-  </script>
 
   <!-- Dynamic CSS variables from Tweaks -->
   <style id="tweak-vars">
@@ -251,17 +242,14 @@
     ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksHost />);
   </script>
 
-  <!-- Loader dismiss -->
+  <!-- Loader dismiss — toujours affiché au chargement, jamais lors de la nav React -->
   <script>
     (function () {
-      if (localStorage.getItem('gaia-loader-seen')) return;
       var overlay = document.getElementById('gaia-loader');
       if (!overlay) return;
-      // 9 500 ms = durée animation (9 s) + 500 ms de marge
       setTimeout(function () {
         overlay.classList.add('hide');
         setTimeout(function () { overlay.remove(); }, 1000);
-        localStorage.setItem('gaia-loader-seen', '1');
       }, 9500);
     })();
   </script>
