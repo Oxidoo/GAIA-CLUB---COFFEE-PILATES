@@ -1,10 +1,5 @@
 // Contact Page
 function ContactPage({ setPage }) {
-  const [sent, setSent] = React.useState(false);
-  const [form, setForm] = React.useState({ firstName: '', lastName: '', email: '', phone: '', subject: 'Général', message: '' });
-  const onChange = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }));
-  const submit = (e) => { e.preventDefault(); setSent(true); };
-
   return (
     <div className="page-root">
       <section className="contact-hero" data-screen-label="Contact Hero">
@@ -22,88 +17,37 @@ function ContactPage({ setPage }) {
         </div>
       </section>
 
-      <div className="contact-grid">
-        <div className="contact-info">
-          <div className="eyebrow" style={{ marginBottom: 16, opacity: 0.6 }}>Le Club</div>
-          <h2>GAIA <span className="script">Club</span></h2>
+      <section className="contact-duo">
+        <div className="contact-duo-card">
+          <img src="contact/contact-2.jpg" alt="Le Club" />
+          <div className="contact-duo-label">LE <span className="script">Club</span></div>
+        </div>
+        <div className="contact-duo-card">
+          <img src="contact/contact-3.jpg" alt="Le Coffee Shop" />
+          <div className="contact-duo-label">LE <span className="script">Coffee Shop</span></div>
+        </div>
+      </section>
 
-          <div className="info-block">
-            <h4>Adresse</h4>
-            <p>79 Avenue Ledru Rollin<br/>75012 — Paris</p>
+      <section className="contact-infos">
+        <div className="contact-infos-top">
+          <div className="eyebrow" style={{ fontSize: 13, letterSpacing: '0.28em' }}>GAIA CLUB</div>
+          <p className="contact-infos-address">79 Avenue Ledru Rollin, 75012 — Paris</p>
+        </div>
+        <div className="contact-infos-cols">
+          <div className="contact-infos-col">
+            <h4>Horaires du club &amp; coffee shop</h4>
+            <p>Du lundi au dimanche 7h15 — 21h30</p>
           </div>
-          <div className="info-block">
-            <h4>Horaires — Club & Coffee Shop</h4>
-            <p>Du lundi au dimanche<br/>7h15 — 21h30</p>
-          </div>
-          <div className="info-block">
-            <h4>Nous écrire</h4>
+          <div className="contact-infos-sep" />
+          <div className="contact-infos-col">
+            <h4>Contact</h4>
             <p>
-              <a href="mailto:contact@gaia-club.com">contact@gaia-club.com</a><br/>
-              <a href="tel:+33180880560">01 80 88 05 60</a>
+              Email : <a href="mailto:contact@gaia-club.com">contact@gaia-club.com</a> — <a href="tel:+33180880560">01 80 88 05 60</a><br/>
+              Instagram : <a href="#" onClick={e => e.preventDefault()}>@gaiaclub.paris</a>
             </p>
           </div>
-          <div className="info-block">
-            <h4>Réseaux</h4>
-            <p><a href="#" onClick={(e) => e.preventDefault()}>@gaiaclub.paris</a></p>
-          </div>
-          <div className="info-block">
-            <h4>S'y rendre</h4>
-            <div className="info-transport">
-              Métro · Ledru Rollin<br/>
-              Bus · Ligne 61 — N16 — N34<br/>
-              Vélib' · Station à 100 m<br/>
-              Parking · Q-Park Bastille Saint-Antoine
-            </div>
-          </div>
         </div>
-
-        <div className="contact-form">
-          <h3>Nous écrire</h3>
-          <p>Une question, une demande particulière ? Nous vous répondons sous 24h.</p>
-          {sent ? (
-            <div style={{ padding: '60px 0', textAlign: 'center' }}>
-              <div className="script" style={{ fontSize: 56, color: 'var(--marron)', marginBottom: 16 }}>Merci !</div>
-              <p style={{ color: 'var(--marron-soft)' }}>Votre message a bien été envoyé.<br/>Nous revenons vers vous très vite.</p>
-              <button className="btn btn-outline" style={{ marginTop: 32 }} onClick={() => setSent(false)}>Envoyer un autre message</button>
-            </div>
-          ) : (
-            <form onSubmit={submit}>
-              <div className="form-row">
-                <div className="form-field"><label>Prénom</label><input type="text" value={form.firstName} onChange={onChange('firstName')} required /></div>
-                <div className="form-field"><label>Nom</label><input type="text" value={form.lastName} onChange={onChange('lastName')} required /></div>
-              </div>
-              <div className="form-row">
-                <div className="form-field"><label>Email</label><input type="email" value={form.email} onChange={onChange('email')} required /></div>
-                <div className="form-field"><label>Téléphone</label><input type="tel" value={form.phone} onChange={onChange('phone')} /></div>
-              </div>
-              <div className="form-field">
-                <label>Sujet</label>
-                <select value={form.subject} onChange={onChange('subject')}>
-                  <option>Général</option>
-                  <option>Cours & planning</option>
-                  <option>Abonnements & offres</option>
-                  <option>Coffee shop</option>
-                  <option>Privatisation</option>
-                </select>
-              </div>
-              <div className="form-field">
-                <label>Message</label>
-                <textarea value={form.message} onChange={onChange('message')} required placeholder="Dites-nous tout…" />
-              </div>
-              <button className="btn btn-primary" type="submit">Envoyer le message</button>
-            </form>
-          )}
-        </div>
-      </div>
-
-      <section className="coffee-banner">
-        <div className="coffee-banner-img" />
-        <div className="coffee-banner-content">
-          <div className="eyebrow">Un lieu de vie</div>
-          <h2>Le <span className="script">Coffee Shop</span></h2>
-          <p>Ouvert à tous, pour un café avant la séance ou une pause en fin de journée. Options saines, matcha, boissons fermentées et pâtisseries maison.</p>
-          <div><button className="btn btn-outline">Voir le menu</button></div>
-        </div>
+        <a href="mailto:contact@gaia-club.com" className="btn btn-primary">Nous écrire</a>
       </section>
 
       <section className="contact-photo-block">
