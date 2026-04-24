@@ -220,7 +220,7 @@
         return () => window.removeEventListener('message', handler);
       }, []);
 
-      const navVariant = (page === 'home' || page === 'club' || page === 'cours' || page === 'tarifs') ? 'light' : 'solid';
+      const navVariant = (page === 'home' || page === 'club' || page === 'cours' || page === 'tarifs' || page === 'contact') ? 'light' : 'solid';
 
       let PageEl = null;
       if (page === 'home') PageEl = <HomePage setPage={setPage} />;
