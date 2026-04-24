@@ -1802,6 +1802,11 @@ a { color: inherit; text-decoration: none; }
   .nav.scrolled .nav-logo-img { height: 36px; }
 
   .hero, .club-hero, .cours-hero, .tarif-hero, .contact-hero { min-height: 92vh; }
+  .club-hero, .cours-hero, .tarif-hero, .contact-hero { padding: 80px 24px 60px; }
+  .club-hero h1, .cours-hero h1, .tarif-hero h1 { font-size: 48px; }
+  .club-hero h1 .script, .cours-hero h1 .script { font-size: 48px; }
+  .tarif-hero h1 .script { font-size: 48px; }
+  .tarif-hero h1 .script .offres-ff { font-size: 36px; }
   .hero { padding: 20px; }
   .hero-title-script { font-size: 40px; }
   .hero-title-bold { font-size: 40px; }
