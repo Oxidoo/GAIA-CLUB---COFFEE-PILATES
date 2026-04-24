@@ -5,12 +5,8 @@ function ClubPage({ setPage }) {
     <div className="page-root">
       <section className="club-hero" data-screen-label="Club Hero">
         <div className="club-hero-bg" />
-        <div>
-          <h1>
-            Le <span className="script">Club</span>
-            <div className="eyebrow">A space dedicated to movement and wellbeing</div>
-          </h1>
-        </div>
+        <h1>Le <span className="script">Club</span></h1>
+        <div className="eyebrow" style={{ marginTop: 20, opacity: 0.8 }}>A space dedicated to movement and wellbeing</div>
       </section>
 
       <Marquee />
