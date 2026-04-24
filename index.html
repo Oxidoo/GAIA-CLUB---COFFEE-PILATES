@@ -189,7 +189,7 @@
       const initial = (() => {
         try {
           const saved = localStorage.getItem('gaia-page');
-          if (saved && ['home','club','cours','tarifs','planning','contact'].includes(saved)) return saved;
+          if (saved && ['home','club','cours','tarifs','contact'].includes(saved)) return saved;
         } catch (e) {}
         return 'home';
       })();
@@ -220,13 +220,13 @@
         return () => window.removeEventListener('message', handler);
       }, []);
 
-      const navVariant = (page === 'home' || page === 'club' || page === 'cours' || page === 'tarifs' || page === 'planning') ? 'light' : 'solid';
+      const navVariant = (page === 'home' || page === 'club' || page === 'cours' || page === 'tarifs') ? 'light' : 'solid';
 
       let PageEl = null;
       if (page === 'home') PageEl = <HomePage setPage={setPage} />;
       else if (page === 'club') PageEl = <ClubPage setPage={setPage} />;
       else if (page === 'cours') PageEl = <CoursPage setPage={setPage} />;
-      else if (page === 'tarifs' || page === 'planning') PageEl = <TarifsPage setPage={setPage} />;
+      else if (page === 'tarifs') PageEl = <TarifsPage setPage={setPage} />;
       else if (page === 'contact') PageEl = <ContactPage setPage={setPage} />;
 
       return (

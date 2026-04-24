@@ -2,7 +2,7 @@
 const NAV_LINKS_LEFT = [
   { id: 'club', label: 'Le Club' },
   { id: 'cours', label: 'Cours' },
-  { id: 'planning', label: 'Planning' },
+  { id: 'contact', label: 'Contact' },
   { id: 'tarifs', label: 'Tarifs' },
   { id: 'shop', label: 'Shop' },
 ];
@@ -81,7 +81,7 @@ function Nav({ page, setPage, variant = 'solid' }) {
           <a href="#" onClick={(e) => { e.preventDefault(); go('home'); }}>Accueil</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('club'); }}>Le Club</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('cours'); }}>Cours</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>Planning</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); go('contact'); }}>Contact</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>Tarifs</a>
           <a href="#" onClick={(e) => { e.preventDefault(); go('contact'); }}>Contact</a>
           <a href="#" className="script-tag" onClick={(e) => { e.preventDefault(); go('tarifs'); }}>Réserver</a>
