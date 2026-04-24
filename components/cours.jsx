@@ -41,7 +41,7 @@ function CoursPage({ setPage }) {
       duree: '45 à 60 min',
       niveau: 'Débutants & confirmés',
       objectif: 'Souplesse & respiration',
-      img: 'assets/cours/cours-4.jpg',
+      img: 'assets/cours/cours-5.jpg',
     },
   ];
 
