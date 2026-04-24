@@ -8,7 +8,8 @@ function ContactPage({ setPage }) {
   return (
     <div className="page-root">
       <section className="contact-hero" data-screen-label="Contact Hero">
-        <div className="eyebrow" style={{ marginBottom: 24, opacity: 0.6 }}>Nous rencontrer</div>
+        <div className="contact-hero-bg" />
+        <div className="eyebrow" style={{ marginBottom: 24, opacity: 0.8 }}>Nous rencontrer</div>
         <h1><span className="script">Contact</span></h1>
         <p>
           Venez bouger, respirer et prendre le temps chez GAIA. Retrouvez ici toutes
@@ -105,15 +106,8 @@ function ContactPage({ setPage }) {
         </div>
       </section>
 
-      <section className="map-block">
-        <h2>Venir au <span style={{ fontFamily: 'var(--font-script)' }}>studio</span></h2>
-        <div className="map-frame">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=2.3775%2C48.8485%2C2.3825%2C48.8515&amp;layer=mapnik&amp;marker=48.8500%2C2.3800"
-            title="Carte GAIA"
-            loading="lazy"
-          />
-        </div>
+      <section className="contact-photo-block">
+        <img src="contact/contact-4.jpg" alt="GAIA Studio" />
       </section>
 
       <Outro setPage={setPage} />
