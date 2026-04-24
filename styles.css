@@ -1596,8 +1596,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ============ CONTACT PAGE ============ */
 .contact-hero {
-  min-height: 85vh;
-  padding: 120px 40px 80px;
+  min-height: 100vh;
+  padding: 120px 40px 100px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1729,12 +1729,10 @@ a { color: inherit; text-decoration: none; }
 
 .contact-photo-block {
   width: 100%;
-  aspect-ratio: 16/7;
-  overflow: hidden;
   margin-top: 60px;
   margin-bottom: 80px;
 }
-.contact-photo-block img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.contact-photo-block img { width: 100%; height: auto; display: block; }
 
 /* ============ Responsive ============ */
 @media (max-width: 1024px) {
