@@ -199,6 +199,11 @@
         try { localStorage.setItem('gaia-page', p); } catch (e) {}
       };
 
+      // Scroll to top after every page change, once the new content is rendered
+      React.useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [page]);
+
       // Apply feature-flag data attrs from tweaks to body
       React.useEffect(() => {
         const handler = (e) => {
