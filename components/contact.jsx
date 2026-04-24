@@ -20,11 +20,11 @@ function ContactPage({ setPage }) {
       <section className="contact-duo">
         <div className="contact-duo-card">
           <img src="contact/contact-2.jpg" alt="Le Club" />
-          <div className="contact-duo-label">LE <span className="script">Club</span></div>
+          <div className="contact-duo-label"><span className="script">Club</span></div>
         </div>
         <div className="contact-duo-card">
           <img src="contact/contact-3.jpg" alt="Le Coffee Shop" />
-          <div className="contact-duo-label">LE <span className="script">Coffee Shop</span></div>
+          <div className="contact-duo-label"><span className="script">Coffee Shop</span></div>
         </div>
       </section>
 
@@ -53,6 +53,8 @@ function ContactPage({ setPage }) {
       <section className="contact-photo-block">
         <img src="contact/contact-4.jpg" alt="GAIA Studio" />
       </section>
+
+      <Marquee />
 
       <Outro setPage={setPage} />
     </div>
