@@ -2,7 +2,7 @@
 const NAV_LINKS_LEFT = [
   { id: 'club', label: 'Le Club' },
   { id: 'cours', label: 'Cours' },
-  { id: 'tarifs', label: 'Planning' },
+  { id: 'planning', label: 'Planning' },
   { id: 'tarifs', label: 'Tarifs' },
   { id: 'shop', label: 'Shop' },
 ];
