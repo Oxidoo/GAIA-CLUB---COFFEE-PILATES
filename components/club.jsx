@@ -6,9 +6,9 @@ function ClubPage({ setPage }) {
       <section className="club-hero" data-screen-label="Club Hero">
         <div className="club-hero-bg" />
         <div>
-          <div className="eyebrow">A space dedicated to movement and wellbeing</div>
           <h1>
             Le <span className="script">Club</span>
+            <div className="eyebrow">A space dedicated to movement and wellbeing</div>
           </h1>
         </div>
       </section>
@@ -25,7 +25,7 @@ function ClubPage({ setPage }) {
         </div>
         <div className="club-intro-body">
           <p>
-            Situé au cœur du 12<sup>e</sup> arrondissement de Paris, GAIA est bien plus qu'un studio de Pilates.
+            GAIA est bien plus qu'un studio de Pilates.
             C'est un lieu pensé comme une véritable expérience, où le mouvement devient un art de vivre.
           </p>
           <p>
@@ -50,6 +50,9 @@ function ClubPage({ setPage }) {
           <h2>
             Un lieu pensé<br/>pour le <span className="script">mouvement</span>
           </h2>
+          <p style={{ textTransform: 'uppercase', fontWeight: 600 }}>
+            Situé au coeur du 12e arrondissement de Paris,
+          </p>
           <p>
             Le studio propose deux salles complémentaires : une salle Reformer équipée de machines
             haut de gamme, et une salle plus intimiste, accueillant jusqu'à 10 personnes, dédiée aux
