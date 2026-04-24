@@ -49,8 +49,8 @@ function CoursPage({ setPage }) {
     <div className="page-root">
       <section className="cours-hero" data-screen-label="Cours Hero">
         <div className="cours-hero-bg" />
-        <div className="eyebrow" style={{ marginBottom: 24, opacity: 0.8 }}>L'Expérience Gaia</div>
         <h1>Les <span className="script">Cours</span></h1>
+        <div className="eyebrow" style={{ marginTop: 20, opacity: 0.8 }}>L'Expérience Gaia</div>
         <p>
           Chez GAIA, chaque cours est pensé pour renforcer le corps, améliorer la mobilité
           et cultiver le bien-être. Que vous recherchiez une pratique dynamique, profonde
