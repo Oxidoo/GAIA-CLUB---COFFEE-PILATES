@@ -27,8 +27,8 @@ function TarifsPage({ setPage }) {
       <section className="tarif-hero" data-screen-label="Tarif Hero">
         <div className="tarif-hero-bg" />
         <div>
-          <div className="eyebrow" style={{ color: 'var(--jaune)', marginBottom: 24 }}>Nos formules</div>
-          <h1>Les <span className="script">Offres</span></h1>
+          <h1>Les <span className="script">O<span className="offres-ff">ff</span>res</span></h1>
+          <div className="eyebrow" style={{ color: 'var(--blanc)', marginBottom: 24 }}>Nos formules</div>
         </div>
       </section>
 

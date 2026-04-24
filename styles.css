@@ -534,9 +534,11 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-the {
   color: var(--blanc);
+  font-size: 80px;
 }
 .hero-art {
   color: var(--jaune);
+  font-size: 80px;
 }
 .hero-title-bold {
   display: block;
@@ -1034,7 +1036,7 @@ a { color: inherit; text-decoration: none; }
 .club-hero h1 {
   font-family: 'Zapfino';
   font-weight: 400;
-  font-size: clamp(68px, 12vw, 200px);
+  font-size: 80px;
   letter-spacing: -0.03em;
   line-height: 0.9;
   color: rgba(251, 250, 245, 1);
@@ -1043,7 +1045,7 @@ a { color: inherit; text-decoration: none; }
 .club-hero h1 .script {
   font-family: var(--font-script);
   font-weight: 400;
-  font-size: 50px;
+  font-size: 80px;
 }
 .club-hero .eyebrow { margin-bottom: 24px; color: rgba(251, 250, 245, 1); opacity: 0.8; }
 
@@ -1131,13 +1133,14 @@ a { color: inherit; text-decoration: none; }
   background: var(--blanc);
 }
 .cours-hero h1 {
-  font-family: var(--font-body);
+  font-family: 'Zapfino';
   font-weight: 400;
-  font-size: clamp(72px, 13vw, 220px);
+  font-size: 80px;
   line-height: 0.9;
   letter-spacing: -0.03em;
+  padding-top: 100px;
 }
-.cours-hero h1 .script { font-family: var(--font-script); font-weight: 400; }
+.cours-hero h1 .script { font-family: var(--font-script); font-weight: 400; font-size: 80px; }
 .cours-hero p {
   max-width: 620px;
   margin: 32px auto 0;
@@ -1275,14 +1278,20 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(180deg, rgba(48,18,10,0.3) 0%, rgba(48,18,10,0.1) 40%, rgba(48,18,10,0.8) 100%);
 }
 .tarif-hero h1 {
-  font-family: var(--font-body);
+  font-family: 'Zapfino';
   font-weight: 400;
-  font-size: 50px;
+  font-size: 80px;
   letter-spacing: -0.03em;
   line-height: 0.9;
-  color: var(--jaune);
+  color: rgba(251, 250, 245, 1);
 }
-.tarif-hero h1 .script { font-family: var(--font-script); font-size: 1em; font-weight: 400; }
+.tarif-hero h1 .script {
+  font-family: var(--font-script);
+  font-size: 1em;
+  font-weight: 400;
+  color: rgba(251, 250, 245, 1);
+}
+.tarif-hero h1 .script .offres-ff { font-size: 60px; }
 
 .tarif-unite {
   padding: 120px 40px;
