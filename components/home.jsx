@@ -3,10 +3,10 @@ function HomePage({ setPage }) {
   const go = (id) => { setPage(id); window.scrollTo(0, 0); };
 
   const cours = [
-    { id: 'reformer', name: 'Reformer', img: 'assets/home/cours-reformer.jpg' },
-    { id: 'mat', name: 'Mat', img: 'assets/home/cours-mat.jpg' },
-    { id: 'hot', name: 'Hot', img: 'assets/home/cours-hot.jpg' },
-    { id: 'yoga', name: 'Yoga', img: 'assets/home/cours-yoga.jpg' },
+    { id: 'reformer', name: 'Reformer', img: 'assets/home/cours-reformer.webp' },
+    { id: 'mat', name: 'Mat', img: 'assets/home/cours-mat.webp' },
+    { id: 'hot', name: 'Hot', img: 'assets/home/cours-hot.webp' },
+    { id: 'yoga', name: 'Yoga', img: 'assets/home/cours-yoga.webp' },
   ];
 
   const passes = [
@@ -78,7 +78,7 @@ function HomePage({ setPage }) {
           <div className="cours-grid">
             {cours.map(c => (
               <a key={c.id} href="#" className="cours-card" style={{ borderRadius: '10px' }} onClick={(e) => { e.preventDefault(); go('cours'); }}>
-                <img src={c.img} alt={c.name} />
+                <img src={c.img} alt={c.name} loading="lazy" decoding="async" />
                 <div className="cours-card-label">
                   <h3>{c.name}</h3>
                   <div className="cours-card-arrow">→</div>
@@ -112,7 +112,7 @@ function HomePage({ setPage }) {
 
       <section className="banner">
         <div className="banner-img">
-          <img src="assets/home/coffee-shop.jpg" alt="Coffee shop" />
+          <img src="assets/home/coffee-shop.webp" alt="Coffee shop" loading="lazy" decoding="async" />
         </div>
         <div className="banner-content">
           <div className="eyebrow">Pilates & Coffee Shop</div>
@@ -134,9 +134,9 @@ function HomePage({ setPage }) {
           <p>Les essentiels pour accompagner votre pratique, dedans comme dehors.</p>
         </div>
         <div className="shop-grid">
-          <div className="shop-card"><img src="assets/home/shop-1.jpg" alt="Outfit" /><div className="shop-card-meta">Outfit</div></div>
-          <div className="shop-card"><img src="assets/home/shop-2.jpg" alt="Chaussettes" /><div className="shop-card-meta">Chaussettes Pilates</div></div>
-          <div className="shop-card"><img src="assets/home/shop-3.jpg" alt="Tote bag" /><div className="shop-card-meta">Tote bag</div></div>
+          <div className="shop-card"><img src="assets/home/shop-1.webp" alt="Outfit" loading="lazy" decoding="async" /><div className="shop-card-meta">Outfit</div></div>
+          <div className="shop-card"><img src="assets/home/shop-2.webp" alt="Chaussettes" loading="lazy" decoding="async" /><div className="shop-card-meta">Chaussettes Pilates</div></div>
+          <div className="shop-card"><img src="assets/home/shop-3.webp" alt="Tote bag" loading="lazy" decoding="async" /><div className="shop-card-meta">Tote bag</div></div>
         </div>
         <div style={{ textAlign: 'center', marginTop: 60 }}>
           <button className="btn btn-primary" onClick={() => alert('Shop bientôt disponible.')}>Découvrir le shop</button>
@@ -145,7 +145,7 @@ function HomePage({ setPage }) {
 
       <section className="banner reverse">
         <div className="banner-img">
-          <img src="assets/home/class-passes.jpg" alt="Class passes" />
+          <img src="assets/home/class-passes.webp" alt="Class passes" loading="lazy" decoding="async" />
         </div>
         <div className="banner-content dark">
           <div className="eyebrow" style={{ color: 'var(--jaune)' }}>Planning & Réservation</div>
@@ -166,11 +166,11 @@ function HomePage({ setPage }) {
           <p>Quelques fragments de l'univers GAIA — matières, lumières, détails du studio.</p>
         </div>
         <div className="galerie-strip">
-          <img src="assets/home/galerie-1.jpg" alt="" />
-          <img src="assets/home/galerie-2.jpg" alt="" />
-          <img src="assets/home/galerie-3.jpg" alt="" />
-          <img src="assets/home/galerie-4.jpg" alt="" />
-          <img src="assets/home/galerie-5.jpg" alt="" />
+          <img src="assets/home/galerie-1.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/home/galerie-2.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/home/galerie-3.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/home/galerie-4.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/home/galerie-5.webp" alt="" loading="lazy" decoding="async" />
         </div>
       </section>
 
