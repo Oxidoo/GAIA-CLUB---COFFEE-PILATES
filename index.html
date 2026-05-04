@@ -91,12 +91,11 @@
   </style>
 
   <!-- Preload critical assets -->
-  <link rel="preconnect" href="https://unpkg.com" crossorigin />
   <link rel="preload" href="assets/home/home-hero.webp" as="image" type="image/webp" fetchpriority="high" />
   <link rel="preload" href="assets/fonts/Manrope-Medium.woff2" as="font" type="font/woff2" crossorigin />
 
-  <script defer src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
-  <script defer src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+  <script defer src="assets/vendor/react.production.min.js"></script>
+  <script defer src="assets/vendor/react-dom.production.min.js"></script>
 </head>
 <body>
   <!-- Loader — première visite uniquement -->
@@ -107,15 +106,7 @@
   <div id="root"></div>
   <div id="tweaks-root"></div>
 
-  <script defer src="components/shared.js"></script>
-  <script defer src="components/home.js"></script>
-  <script defer src="components/club.js"></script>
-  <script defer src="components/cours.js"></script>
-  <script defer src="components/tarifs.js"></script>
-  <script defer src="components/contact.js"></script>
-  <script defer src="components/tweaks.js"></script>
-  <script defer src="components/speed-insights.js"></script>
-  <script defer src="components/app.js"></script>
+  <script defer src="components/bundle.js"></script>
 
   <!-- Loader dismiss — toujours affiché au chargement, jamais lors de la nav React -->
   <script>
@@ -131,7 +122,7 @@
   </script>
 
   <!-- Lenis smooth scroll (deferred — non blocking) -->
-  <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script defer src="assets/vendor/lenis.min.js"></script>
   <script defer>
     window.addEventListener('load', function () {
       var lenis = new Lenis({
