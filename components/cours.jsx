@@ -11,7 +11,7 @@ function CoursPage({ setPage }) {
       duree: '45 à 50 min',
       niveau: 'Débutants & confirmés',
       objectif: 'Renforcement & stabilité',
-      img: 'assets/cours/cours-3.jpg',
+      img: 'assets/cours/cours-3.webp',
     },
     {
       kicker: 'Équilibre',
@@ -21,7 +21,7 @@ function CoursPage({ setPage }) {
       duree: '45 à 50 min',
       niveau: 'Débutants & confirmés',
       objectif: 'Gainage & posture',
-      img: 'assets/cours/cours-4.jpg',
+      img: 'assets/cours/cours-4.webp',
     },
     {
       kicker: 'Intense',
@@ -31,7 +31,7 @@ function CoursPage({ setPage }) {
       duree: '45 à 50 min',
       niveau: 'Débutants & confirmés',
       objectif: 'Endurance & detox',
-      img: 'assets/cours/cours-2.jpg',
+      img: 'assets/cours/cours-2.webp',
     },
     {
       kicker: 'Énergie',
@@ -41,7 +41,7 @@ function CoursPage({ setPage }) {
       duree: '45 à 60 min',
       niveau: 'Débutants & confirmés',
       objectif: 'Souplesse & respiration',
-      img: 'assets/cours/cours-5.jpg',
+      img: 'assets/cours/cours-5.webp',
     },
   ];
 
@@ -70,7 +70,7 @@ function CoursPage({ setPage }) {
         {cours.map((c, i) => (
           <section className="cours-detail" key={i}>
             <div className="cours-detail-img">
-              <img src={c.img} alt="" />
+              <img src={c.img} alt="" loading="lazy" decoding="async" />
             </div>
             <div className="cours-detail-content">
               <div className="kicker">{c.kicker}</div>

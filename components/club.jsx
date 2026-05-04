@@ -40,7 +40,7 @@ function ClubPage({ setPage }) {
       </section>
 
       <section className="club-mouvement">
-        <img src="assets/club/lieu-mouvement.jpg" alt="Un lieu pensé pour le mouvement" />
+        <img src="assets/club/lieu-mouvement.webp" alt="Un lieu pensé pour le mouvement" loading="lazy" decoding="async" />
         <div>
           <div className="eyebrow">Le studio</div>
           <h2>
@@ -64,7 +64,7 @@ function ClubPage({ setPage }) {
 
       <section className="banner">
         <div className="banner-img">
-          <img src="assets/home/coffee-shop.jpg" alt="Coffee shop Gaia" />
+          <img src="assets/home/coffee-shop.webp" alt="Coffee shop Gaia" loading="lazy" decoding="async" />
         </div>
         <div className="banner-content">
           <div className="eyebrow">Un lieu de vie</div>
@@ -81,8 +81,8 @@ function ClubPage({ setPage }) {
       <section className="fondateurs">
         <div className="fondateurs-inner">
           <div className="fondateurs-images">
-            <img src="assets/club/fondateurs-1.jpg" alt="" />
-            <img src="assets/club/fondateurs-2.jpg" alt="" />
+            <img src="assets/club/fondateurs-1.webp" alt="" loading="lazy" decoding="async" />
+            <img src="assets/club/fondateurs-2.webp" alt="" loading="lazy" decoding="async" />
           </div>
           <div className="fondateurs-content">
             <div className="eyebrow">Les fondateurs</div>
