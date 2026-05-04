@@ -3,30 +3,35 @@
   font-family: 'Manrope';
   font-weight: 400;
   font-style: normal;
-  src: url('assets/fonts/Manrope-Medium.ttf') format('truetype');
+  src: url('assets/fonts/Manrope-Medium.woff2') format('woff2'),
+       url('assets/fonts/Manrope-Medium.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Manrope';
   font-weight: 500;
-  src: url('assets/fonts/Manrope-Medium.ttf') format('truetype');
+  src: url('assets/fonts/Manrope-Medium.woff2') format('woff2'),
+       url('assets/fonts/Manrope-Medium.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Manrope';
   font-weight: 600;
-  src: url('assets/fonts/Manrope-SemiBold.ttf') format('truetype');
+  src: url('assets/fonts/Manrope-SemiBold.woff2') format('woff2'),
+       url('assets/fonts/Manrope-SemiBold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Manrope';
   font-weight: 700;
-  src: url('assets/fonts/Manrope-Bold.ttf') format('truetype');
+  src: url('assets/fonts/Manrope-Bold.woff2') format('woff2'),
+       url('assets/fonts/Manrope-Bold.ttf') format('truetype');
   font-display: swap;
 }
 @font-face {
   font-family: 'Zapfino';
-  src: url('assets/fonts/Zapfino.ttf') format('truetype');
+  src: url('assets/fonts/Zapfino.woff2') format('woff2'),
+       url('assets/fonts/Zapfino.ttf') format('truetype');
   font-display: swap;
 }
 
@@ -48,7 +53,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--marron); }
 /* Lenis smooth scroll — désactive scroll-behavior natif pour éviter les conflits */
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -56,7 +61,7 @@ html.lenis { height: auto; }
 
 body {
   font-family: var(--font-body);
-  background: var(--blanc);
+  background: var(--marron);
   color: var(--marron);
   font-weight: 400;
   font-size: 16px;
