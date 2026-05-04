@@ -92,13 +92,11 @@
 
   <!-- Preload critical assets -->
   <link rel="preconnect" href="https://unpkg.com" crossorigin />
-  <link rel="preload" href="assets/home/home-hero.webp" as="image" type="image/webp" />
-  <link rel="preload" href="assets/fonts/Manrope-Medium.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="assets/fonts/Zapfino.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/home/home-hero.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="preload" href="assets/fonts/Manrope-Medium.woff2" as="font" type="font/woff2" crossorigin />
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script defer src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+  <script defer src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Loader — première visite uniquement -->
@@ -109,143 +107,15 @@
   <div id="root"></div>
   <div id="tweaks-root"></div>
 
-  <script type="text/babel" src="components/shared.jsx"></script>
-  <script type="text/babel" src="components/home.jsx"></script>
-  <script type="text/babel" src="components/club.jsx"></script>
-  <script type="text/babel" src="components/cours.jsx"></script>
-  <script type="text/babel" src="components/tarifs.jsx"></script>
-  <script type="text/babel" src="components/contact.jsx"></script>
-  <script type="text/babel" src="components/tweaks.jsx"></script>
-  <script type="text/babel" src="components/speed-insights.jsx"></script>
-
-  <script type="text/babel">
-    // ============ TWEAK DEFAULTS ============
-    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-      "colorMarron": "#30120A",
-      "colorMarronSoft": "#4a2a1e",
-      "colorJaune": "#FFEC99",
-      "colorBeige": "#F7F4EF",
-      "colorBlanc": "#FBFAF5",
-      "colorLine": "rgba(48,18,10,0.18)",
-      "fontBody": "Manrope",
-      "fontScript": "Zapfino",
-      "bodyFontSize": 16,
-      "heroFontSize": 72,
-      "navLetterSpacing": 0.18,
-      "btnRadius": 999,
-      "cardRadius": 10,
-      "cardShadow": false,
-      "sectionPadding": 120,
-      "containerMaxWidth": 1440,
-      "heroOverlay": 0.55,
-      "heroShowHours": false,
-      "heroMinHeight": 100,
-      "transitionSpeed": 0.3,
-      "hoverZoom": 1.05,
-      "showMarquee": true,
-      "showGalerie": true,
-      "showShop": true,
-      "showStats": true,
-      "showFondateurs": true,
-      "coursColumns": 4,
-      "footerDark": true,
-      "navCompact": false,
-      "navStyle": "transparent",
-      "marqueeRunning": true
-    }/*EDITMODE-END*/;
-
-    window.__TWEAK_DEFAULTS__ = TWEAK_DEFAULTS;
-
-    // ============ Tweaks host ============
-    function TweaksHost() {
-      const [visible, setVisible] = React.useState(false);
-
-      React.useEffect(() => {
-        // Register listener FIRST, then announce availability
-        const handler = (e) => {
-          if (!e.data || !e.data.type) return;
-          if (e.data.type === '__activate_edit_mode') {
-            setVisible(true);
-            document.body.classList.add('tweaks-open');
-          }
-          if (e.data.type === '__deactivate_edit_mode') {
-            setVisible(false);
-            document.body.classList.remove('tweaks-open');
-          }
-        };
-        window.addEventListener('message', handler);
-        window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-        return () => window.removeEventListener('message', handler);
-      }, []);
-
-      if (!visible) return null;
-      return (
-        <TweaksPanel
-          defaults={TWEAK_DEFAULTS}
-          onClose={() => {
-            setVisible(false);
-            document.body.classList.remove('tweaks-open');
-            window.parent.postMessage({ type: '__deactivate_edit_mode' }, '*');
-          }}
-        />
-      );
-    }
-
-    // ============ Main App ============
-    function App() {
-      const [page, setPageState] = React.useState('home');
-      const setPage = (p) => {
-        setPageState(p);
-      };
-
-      // Scroll to top after every page change, once the new content is rendered
-      React.useEffect(() => {
-        window.scrollTo(0, 0);
-      }, [page]);
-
-      // Apply feature-flag data attrs from tweaks to body
-      React.useEffect(() => {
-        const handler = (e) => {
-          if (!e.data || e.data.type !== '__edit_mode_set_keys') return;
-          const v = e.data.edits;
-          if (!v) return;
-          const b = document.body;
-          b.dataset.hideMarquee = v.showMarquee === false ? '1' : '';
-          b.dataset.hideGalerie = v.showGalerie === false ? '1' : '';
-          b.dataset.hideShop = v.showShop === false ? '1' : '';
-          b.dataset.hideStats = v.showStats === false ? '1' : '';
-          b.dataset.hideFondateurs = v.showFondateurs === false ? '1' : '';
-          b.dataset.coursCols = v.coursColumns || 4;
-          b.dataset.navCompact = v.navCompact ? '1' : '';
-          // hero min-height
-          document.documentElement.style.setProperty('--tw-hero-minheight', v.heroMinHeight || 100);
-        };
-        window.addEventListener('message', handler);
-        return () => window.removeEventListener('message', handler);
-      }, []);
-
-      const navVariant = (page === 'home' || page === 'club' || page === 'cours' || page === 'tarifs' || page === 'contact') ? 'light' : 'solid';
-
-      let PageEl = null;
-      if (page === 'home') PageEl = <HomePage setPage={setPage} />;
-      else if (page === 'club') PageEl = <ClubPage setPage={setPage} />;
-      else if (page === 'cours') PageEl = <CoursPage setPage={setPage} />;
-      else if (page === 'tarifs') PageEl = <TarifsPage setPage={setPage} />;
-      else if (page === 'contact') PageEl = <ContactPage setPage={setPage} />;
-
-      return (
-        <>
-          <Nav page={page} setPage={setPage} variant={navVariant} />
-          <main key={page}>{PageEl}</main>
-          <Footer setPage={setPage} />
-          <SpeedInsights />
-        </>
-      );
-    }
-
-    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-    ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<TweaksHost />);
-  </script>
+  <script defer src="components/shared.js"></script>
+  <script defer src="components/home.js"></script>
+  <script defer src="components/club.js"></script>
+  <script defer src="components/cours.js"></script>
+  <script defer src="components/tarifs.js"></script>
+  <script defer src="components/contact.js"></script>
+  <script defer src="components/tweaks.js"></script>
+  <script defer src="components/speed-insights.js"></script>
+  <script defer src="components/app.js"></script>
 
   <!-- Loader dismiss — toujours affiché au chargement, jamais lors de la nav React -->
   <script>
@@ -265,10 +135,10 @@
     })();
   </script>
 
-  <!-- Lenis smooth scroll -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script>
-    (function () {
+  <!-- Lenis smooth scroll (deferred — non blocking) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script defer>
+    window.addEventListener('load', function () {
       var lenis = new Lenis({
         duration: 1.2,
         easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
@@ -293,7 +163,7 @@
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
-    })();
+    });
   </script>
 </body>
 </html>
