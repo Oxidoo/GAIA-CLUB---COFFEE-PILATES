@@ -110,6 +110,7 @@
   <script type="text/babel" src="components/tarifs.jsx"></script>
   <script type="text/babel" src="components/contact.jsx"></script>
   <script type="text/babel" src="components/tweaks.jsx"></script>
+  <script type="text/babel" src="components/speed-insights.jsx"></script>
 
   <script type="text/babel">
     // ============ TWEAK DEFAULTS ============
@@ -231,6 +232,7 @@
           <Nav page={page} setPage={setPage} variant={navVariant} />
           <main key={page}>{PageEl}</main>
           <Footer setPage={setPage} />
+          <SpeedInsights />
         </>
       );
     }
