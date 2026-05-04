@@ -1,0 +1,23 @@
+{
+  "name": "gaia-club-coffee-pilates",
+  "version": "1.0.0",
+  "description": "GAIA Club — Pilates, Yoga & Coffee Shop website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oxidoo/GAIA-CLUB---COFFEE-PILATES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oxidoo/GAIA-CLUB---COFFEE-PILATES/issues"
+  },
+  "homepage": "https://github.com/Oxidoo/GAIA-CLUB---COFFEE-PILATES#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
