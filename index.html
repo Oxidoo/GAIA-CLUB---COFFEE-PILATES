@@ -122,16 +122,11 @@
     (function () {
       var overlay = document.getElementById('gaia-loader');
       if (!overlay) return;
-      var dismissed = false;
-      function dismiss() {
-        if (dismissed) return;
-        dismissed = true;
+      // Always show the loader for 2.5s, regardless of page load speed
+      setTimeout(function () {
         overlay.classList.add('hide');
         setTimeout(function () { overlay.remove(); }, 1000);
-      }
-      // Dismiss after 2.5s max, or as soon as the page is interactive
-      setTimeout(dismiss, 2500);
-      window.addEventListener('load', function () { setTimeout(dismiss, 400); });
+      }, 2500);
     })();
   </script>
 
