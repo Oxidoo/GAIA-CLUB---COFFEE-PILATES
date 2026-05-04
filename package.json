@@ -4,7 +4,7 @@
   "description": "GAIA Club — Pilates, Yoga & Coffee Shop website",
   "main": "index.html",
   "scripts": {
-    "build": "node scripts/build-jsx.mjs",
+    "build": "node scripts/build-jsx.mjs && node scripts/bundle-components.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
