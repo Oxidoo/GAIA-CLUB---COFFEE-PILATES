@@ -53,7 +53,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--marron); }
 /* Lenis smooth scroll — désactive scroll-behavior natif pour éviter les conflits */
 html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -61,7 +61,7 @@ html.lenis { height: auto; }
 
 body {
   font-family: var(--font-body);
-  background: var(--blanc);
+  background: var(--marron);
   color: var(--marron);
   font-weight: 400;
   font-size: 16px;
