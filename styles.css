@@ -503,7 +503,7 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0;
   background: url('assets/home/home-hero.webp') center/cover no-repeat;
-  z-index: -2;
+  z-index: 0;
 }
 .hero-bg::after {
   content: '';
@@ -1034,7 +1034,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 .club-hero-bg {
-  position: absolute; inset: 0; z-index: -2;
+  position: absolute; inset: 0; z-index: 0;
   background: url('assets/club/banniere.webp') center/cover;
 }
 .club-hero-bg::after {
@@ -1148,7 +1148,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 .cours-hero-bg {
-  position: absolute; inset: 0; z-index: -2;
+  position: absolute; inset: 0; z-index: 0;
   background: url('assets/cours/cours-1.jpg') center/cover;
 }
 .cours-hero-bg::after {
@@ -1298,7 +1298,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--blanc);
 }
 .tarif-hero-bg {
-  position: absolute; inset: 0; z-index: -2;
+  position: absolute; inset: 0; z-index: 0;
   background: url('assets/tarif/bloc-offres-speciales.jpg') center/cover;
 }
 .tarif-hero-bg::after {
@@ -1619,7 +1619,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 .contact-hero-bg {
-  position: absolute; inset: 0; z-index: -2;
+  position: absolute; inset: 0; z-index: 0;
   background: url('contact/contact-1.webp') center/cover;
 }
 .contact-hero-bg::after {
