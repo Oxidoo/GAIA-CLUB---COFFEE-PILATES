@@ -1031,10 +1031,11 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   color: var(--blanc);
   position: relative;
+  z-index: 0;
   overflow: hidden;
 }
 .club-hero-bg {
-  position: absolute; inset: 0; z-index: 0;
+  position: absolute; inset: 0; z-index: -1;
   background: url('assets/club/banniere.webp') center/cover;
 }
 .club-hero-bg::after {
@@ -1145,10 +1146,11 @@ a { color: inherit; text-decoration: none; }
   justify-content: flex-end;
   color: var(--blanc);
   position: relative;
+  z-index: 0;
   overflow: hidden;
 }
 .cours-hero-bg {
-  position: absolute; inset: 0; z-index: 0;
+  position: absolute; inset: 0; z-index: -1;
   background: url('assets/cours/cours-1.jpg') center/cover;
 }
 .cours-hero-bg::after {
@@ -1289,6 +1291,7 @@ a { color: inherit; text-decoration: none; }
   min-height: 100vh;
   padding: 120px 40px 80px;
   position: relative;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1298,7 +1301,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--blanc);
 }
 .tarif-hero-bg {
-  position: absolute; inset: 0; z-index: 0;
+  position: absolute; inset: 0; z-index: -1;
   background: url('assets/tarif/bloc-offres-speciales.jpg') center/cover;
 }
 .tarif-hero-bg::after {
@@ -1616,10 +1619,11 @@ a { color: inherit; text-decoration: none; }
   justify-content: flex-end;
   color: var(--blanc);
   position: relative;
+  z-index: 0;
   overflow: hidden;
 }
 .contact-hero-bg {
-  position: absolute; inset: 0; z-index: 0;
+  position: absolute; inset: 0; z-index: -1;
   background: url('contact/contact-1.webp') center/cover;
 }
 .contact-hero-bg::after {
